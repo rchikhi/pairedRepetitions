@@ -32,3 +32,9 @@ Usage: pairs-v7 [-v] [-s <int>] [-d <int>] [-f <filename>] [--hd] [--mkesa]
 To compute paired repetitions for very large (human-sized) genomes:
 use a suffix array constructed by mkesa, requires ~60gb ram. feel free to send me a mail 
 if you wish to perform this kind of experiment.
+
+Why all the optimizations in this code? (e.g. 33-bits integers, multiple 1-byte judy arrays, 
+several auxiliary data structures in pairs-v7) Back in 2008 I only had access to a computer
+with 64 GB memory, and the structures supporting paired repetitions computations were too large.
+Nowadays, i'd use compressed suffix arrays like the FM-index to replace the suffix array.
+But I did not know about them back then.
