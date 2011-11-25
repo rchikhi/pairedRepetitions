@@ -1,6 +1,6 @@
-Computes paired and unpaired exact repetitions within a genome quite
-efficiently. Inspired by Nava Whiteford work for exact unpaired repetitions.
-details of the algorithm are in Rayan Chikhi's PhD thesis (2012).
+Computes the ratio of exact, paired (and unpaired) repeated reads within a genome.
+Inspired by Nava Whiteford work for exact unpaired repetitions.
+Details of the algorithm are in Rayan Chikhi's PhD thesis (2012).
 
 It might be a bit tough to compile, so here is a python version (with more readable algorithm), 
 thats has hardcoded parameters:
@@ -36,5 +36,4 @@ if you wish to perform this kind of experiment.
 Why all the optimizations in this code? (e.g. 33-bits integers, multiple 1-byte judy arrays, 
 several auxiliary data structures in pairs-v7) Back in 2008 I only had access to a computer
 with 64 GB memory, and the structures supporting paired repetitions computations were too large.
-Nowadays, i'd use compressed suffix arrays like the FM-index to replace the suffix array.
-But I did not know about them back then.
+For time efficiency (and lack of public implementations), compressed suffix arrays were not used.
