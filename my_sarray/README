@@ -1,0 +1,7 @@
+capable of handling large sarrays
+*** adapted from doug's sarray library ***
+
+
+TODO:
+use something very optimized like http://code.google.com/p/libdivsufsort/
+except that theres no lcp there..

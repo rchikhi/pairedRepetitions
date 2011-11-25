@@ -1,0 +1,32 @@
+Computes paired and unpaired exact repetitions within a genome quite
+efficiently. Inspired by Nava Whiteford work for exact unpaired repetitions.
+details of the algorithm are in Rayan Chikhi's PhD thesis (2012).
+
+It might be a bit tough to compile, so here is a python version (with more readable algorithm), 
+thats has hardcoded parameters:
+- python pairs-v7.py 
+
+Compiling the much faster C version:
+- download Judy (http://sourceforge.net/projects/judy/files/latest/download)
+  and put it in ./judy-1.0.5
+- type ./make-judy.sh to compile judy
+- type make -C ./my_sarray/
+- type "make" to compile pairs-v7.c
+- run ./pairs-v7
+
+./pairs-v7 --help
+Usage: pairs-v7 [-v] [-s <int>] [-d <int>] [-f <filename>] [--hd] [--mkesa]
+[-l <int>] [--nopairs]
+  -s, --sigma=<int>         define sigma value (default is 300)
+  -d, --delta=<int>         define delta value (default is 0)
+  -f <filename>             sequence to analyze
+  --hd                      stores v[] on disk (in ./vfiles/)
+  --mkesa                   use mkesa to build the suffix array and lcp (in ./mkesafiles/)
+  -l, --length=<int>        set maximum read length (default is 16)
+  --nopairs                 do not compute paired uniqueness, only single uniqueness
+  -v, --verbose             verbose
+
+
+To compute paired repetitions for very large (human-sized) genomes:
+use a suffix array constructed by mkesa, requires ~60gb ram. feel free to send me a mail 
+if you wish to perform this kind of experiment.
