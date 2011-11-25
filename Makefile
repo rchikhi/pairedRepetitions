@@ -2,16 +2,22 @@ OBJS = \
        my_sarray/lcp.o \
        my_sarray/sarray.o \
        my_sarray/scode.o 
-LIBS = -L ./judy-1.0.5/lib -L ./argtable2-11/lib
+LIBS = -L ./judy-1.0.5/lib -L ./argtable2/lib
 LFLAGS = -lJudy -largtable2
 MY_FILES_V8 = 33bits.c byte2judy.c rb-1bit.c
 MY_FILES = 33bits.c short2judy.c rb-1bit.c
 
 
-.PHONY:run clean
+.PHONY: clean
 
-default: pairs-v7
+all: pairs-v7
 	./pairs-v7
+
+argtable: ./argtable2/src/argtable2.h
+	cd argtable2;	./configure --prefix=`pwd`;	make;	make install
+
+judy: ./judy-1.0.5/include/Judy.h 
+	cd judy-1.0.5;./configure --prefix=`pwd`;make;make install
 
 v8: pairs-v8
 	./pairs-v8

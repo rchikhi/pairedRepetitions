@@ -8,9 +8,11 @@ thats has hardcoded parameters:
 
 Compiling the much faster C version:
 - download Judy (http://sourceforge.net/projects/judy/files/latest/download)
-  and put it in ./judy-1.0.5
-- type ./make-judy.sh to compile judy
-- type make -C ./my_sarray/
+  and put it in ./judy-1.0.5/
+- type "make judy" to compile judy
+- download argtable (http://argtable.sourceforge.net/) and put it in ./argtable2/ (remove the trailing version, e.g. "-14")
+- type "make argtable" to compile argtable
+- type "make -C ./my_sarray/" to compile suffix array extension
 - type "make" to compile pairs-v7.c
 - run ./pairs-v7
 

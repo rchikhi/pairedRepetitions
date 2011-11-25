@@ -22,7 +22,7 @@
 #include "33bits.h"
 #include "short2judy.h"
 #include "p-judy.h"
-#include "argtable2-11/src/argtable2.h"
+#include "argtable2/src/argtable2.h"
 
 /* Default parameters */
 int print_length=16;
