@@ -1,9 +1,12 @@
 Computes paired and unpaired exact repetitions within a genome quite
 efficiently. Inspired by Nava Whiteford work for exact unpaired repetitions.
-details of the algorithm are in Rayan Chikhi's PhD thesis (2012).
+details of the algorithm are in Rayan Chikhi's PhD thesis (2012), and the following
+abstract: http://hal.inria.fr/docs/00/42/68/56/PDF/1471-2105-10-S13-O2.pdf
+Citation: 
+R. Chikhi, D. Lavenier. Paired-end read length lower bounds for genome re-sequencing. (Meeting Abstract) BMC Bioinformatics 2009, 10(Suppl 13):O2
 
-It might be a bit tough to compile, so here is a python version (with more readable algorithm), 
-thats has hardcoded parameters:
+
+It might be a bit tough to compile, so here is a python version (with a more readable algorithm), parameters are hardcoded:
 - python pairs-v7.py 
 
 Compiling the much faster C version:
